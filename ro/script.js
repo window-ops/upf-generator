@@ -1,5 +1,5 @@
 const ingredients = {
-  'făină': 10000,
+  'făină': 100000,
   'aromă artificială': 10,
   'sirop de porumb cu conținut ridicat de fructoză': 10,
   'amidon de porumb modificat': 8,

@@ -1,5 +1,5 @@
 const ingredients = {
-  'flour': 10000,
+  'flour': 100000,
   'artificial flavor': 10,
   'high fructose corn syrup': 10,
   'modified corn starch': 8,
