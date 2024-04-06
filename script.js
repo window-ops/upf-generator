@@ -1,5 +1,5 @@
 const ingredients = {
-  'flour': 10000,
+  'flour': 10,
   'artificial flavor': 10,
   'high fructose corn syrup': 10,
   'modified corn starch': 8,
@@ -120,14 +120,16 @@ const ingredients = {
 
 function generateIngredients() {
   const numIngredients = Math.floor(Math.random() * (25 - 5 + 1)) + 5;
-  const ingredientsList = [];
-  const totalWeight = Object.values(ingredients).reduce((a, b) => a + b, 0);
+  const ingredientsList = ['flour'];
+  const totalWeight = Object.values(ingredients).reduce((a, b) => a + b, 0) - ingredients['flour'];
   const usedIngredients = new Set();
 
-  for (let i = 0; i < numIngredients; i++) {
+  for (let i = 1; i < numIngredients; i++) {
     let weight = Math.floor(Math.random() * totalWeight) + 1;
 
     for (const [ingredient, prob] of Object.entries(ingredients)) {
+      if (ingredient === 'flour') continue;
+
       weight -= prob;
       if (weight <= 0 && !usedIngredients.has(ingredient)) {
         ingredientsList.push(ingredient);
